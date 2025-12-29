@@ -1,0 +1,74 @@
+## .NET Core / Visual Studio
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.dll
+*.exe
+*.pdb
+*.log
+*.vsidx
+*.vspscc
+*.vsp
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+
+## User Secrets
+# User Secrets are stored outside the project directory, but we'll exclude any local secrets files
+secrets.json
+*.secrets.json
+**/secrets.json
+
+## IDE
+.vs/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+## Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa]rm/
+[Aa]rm64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+## NuGet
+*.nupkg
+*.snupkg
+**/packages/*
+!**/packages/build/
+*.nuget.props
+*.nuget.targets
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Rider
+.idea/
+*.sln.iml
+
+## Visual Studio Code
+.vscode/
+
+## Environment variables
+.env
+.env.local
+.env.*.local
+*.env
+
+## Azure
+*.azurePubxml
+*.publishproj
+
