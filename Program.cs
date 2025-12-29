@@ -1,10 +1,14 @@
 using GifCamp.Components;
+using GifCamp.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+// Configure OAuth Authentication
+builder.Services.AddOAuthAuthentication(builder.Configuration);
 
 var app = builder.Build();
 
@@ -21,7 +25,14 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAntiforgery();
 
+// Add authentication middleware
+app.UseAuthentication();
+app.UseAuthorization();
+
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
+
+// Map authentication endpoints
+app.MapAuthenticationEndpoints();
 
 app.Run();
